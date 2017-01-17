@@ -18,11 +18,13 @@ void keyPressed() {
           if( connectionC ){
               println("OPENING CONNECTION");
               if (!str_highlight.equals("")){
-                myList.add(str_highlight.toUpperCase());
+                //myList.add(str_highlight.toUpperCase());
+                myList.add(str_highlight);
+
                 for (int i = pairs.size()-1; i >= 0; i--) { 
                       wordPair WP = pairs.get(i);
                       if(ignoreWord(WP.firstP) || ignoreWord(WP.secondP) ){
-                          loadData(WP.firstP ,WP.secondP);
+                          addEdge(WP.firstP ,WP.secondP);
                       }
                   }
                   openConnection();
@@ -44,6 +46,8 @@ void keyPressed() {
  
   
   if (key == 'b') {
+    println( "PRESSED b ->");
+
     for (int i = 0 ; i < bubbleToSort ; i++) {
       println(str(i) + "   " + nodes[i].label);
       myList.add(nodes[i].label.toUpperCase());
@@ -73,7 +77,7 @@ void keyPressed() {
       for (int i = pairs.size()-1; i >= 0; i--) { 
           wordPair WP = pairs.get(i);
           if(ignoreWord(WP.firstP) || ignoreWord(WP.secondP) ){
-              loadData(WP.firstP ,WP.secondP);
+              addEdge(WP.firstP ,WP.secondP);
           }
       }
 

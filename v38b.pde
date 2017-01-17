@@ -37,10 +37,10 @@ void setup ()
 {
   pairs = new ArrayList<wordPair>();
   myList = new ArrayList<String>();
-  myList.add(new String("party"));
   myList.add(new String("poker"));
   myList.add(new String("games"));
-  myList.add(new String("tree"));
+  myList.add(new String("star"));
+  myList.add(new String("news"));
  
   lines2 = loadStrings("list2.txt");
   init_xlsFile();
